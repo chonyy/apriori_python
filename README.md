@@ -1,7 +1,8 @@
-# Apriori Algorithm Python Implementation
+<p align=center>
+    <img src="img/apriori.PNG">
+</p>
 
 <p align=center>
-    <a target="_blank" href="https://travis-ci.com/chonyy/apriori_python" title="Build Status"><img src="https://travis-ci.com/chonyy/apriori_python.svg?branch=master"></a>
     <a target="_blank" href="#" title="pip"><img src="https://img.shields.io/pypi/v/apriori_python?color=brightgreen"></a>
     <a target="_blank" href="#" title="language count"><img src="https://img.shields.io/github/languages/count/chonyy/apriori_python"></a>
     <a target="_blank" href="#" title="top language"><img src="https://img.shields.io/github/languages/top/chonyy/apriori_python?color=orange"></a>
@@ -10,9 +11,9 @@
     <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
-## How to use
+# How to use
 
-### Install the Pypi package using pip
+## Install the Pypi package using pip
 
 ```
 pip install apriori_python
@@ -31,16 +32,21 @@ print(rules)
 # rules[0] --> rules[1], confidence = rules[2]
 ```
 
-### Clone the repo
+## Clone the repo
 
-To run the program with dataset provided and default values for *minSupport* = 0.5 and *minConfidence* = 0.5
+Get a copy of this repo using git clone
+```
+git clone https://github.com/chonyy/apriori_python.git
+```
+
+Run the program with dataset provided and **default** values for *minSupport* = 0.5 and *minConfidence* = 0.5
 
 ```
 python apriori.py -f dataset.csv
 ```
 
-To run program with dataset and min support and min confidence  
+Run program with dataset and min support and min confidence  
 
 ```
-python apriori.py -f dataset.csv -s 0.17 -c 0.68
+python apriori.py -f dataset.csv -s 0.33 -c 0.77
 ```
