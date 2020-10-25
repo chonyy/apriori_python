@@ -3,7 +3,7 @@
 </p>
 
 <p align=center>
-    <a target="_blank" href="#" title="pip"><img src="https://img.shields.io/pypi/v/apriori_python?color=brightgreen"></a>
+    <a target="_blank" href="https://pypi.org/project/apriori-python/" title="pip"><img src="https://img.shields.io/pypi/v/apriori_python?color=brightgreen"></a>
     <a target="_blank" href="#" title="language count"><img src="https://img.shields.io/github/languages/count/chonyy/apriori_python"></a>
     <a target="_blank" href="#" title="top language"><img src="https://img.shields.io/github/languages/top/chonyy/apriori_python?color=orange"></a>
     <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
