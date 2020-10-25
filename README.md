@@ -1,5 +1,5 @@
 <p align=center>
-    <img src="img/apriori.PNG">
+    <img src="apriori.PNG">
 </p>
 
 <p align=center>
