@@ -50,3 +50,9 @@ Run program with dataset and min support and min confidence
 ```
 python apriori.py -f dataset.csv -s 0.33 -c 0.77
 ```
+
+## Concepts of Apriori
+
+### Support 
+
+> Fraction of transactions that contain an itemset.
