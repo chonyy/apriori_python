@@ -11,7 +11,7 @@
     <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
-## How to use
+## Getting Started
 
 ### Install the Pypi package using pip
 
@@ -50,3 +50,9 @@ Run program with dataset and min support and min confidence
 ```
 python apriori.py -f dataset.csv -s 0.33 -c 0.77
 ```
+
+## Concepts of Apriori
+
+* **Support:** Fraction of transactions that contain an itemset
+* **Confidence:** Measures how often items in Y appear in transactions that contain X
+* **Frequent itemset:** An itemset whose support is greater than or equal to a minSup threshold
