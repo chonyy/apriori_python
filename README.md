@@ -53,5 +53,6 @@ python apriori.py -f dataset.csv -s 0.33 -c 0.77
 
 ## Concepts of Apriori
 
-* *Support:* Fraction of transactions that contain an itemset.
-
+* **Support:** Fraction of transactions that contain an itemset
+* **Confidence:** Measures how often items in Y appear in transactions that contain X
+* **Frequent itemset:** An itemset whose support is greater than or equal to a minSup threshold
