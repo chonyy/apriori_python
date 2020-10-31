@@ -27,6 +27,7 @@ itemSetList = [['eggs', 'bacon', 'soup'],
                 ['eggs', 'bacon', 'apple'],
                 ['soup', 'bacon', 'banana']]
 freqItemSet, rules = apriori(itemSetList, minSup=0.5, minConf=0.5)
+print(freqItemSet)
 print(rules)  
 # [[{'beer'}, {'rice'}, 0.6666666666666666], [{'rice'}, {'beer'}, 1.0]]
 # rules[0] --> rules[1], confidence = rules[2]
@@ -48,7 +49,7 @@ python apriori.py -f dataset.csv
 Run program with dataset and min support and min confidence  
 
 ```
-python apriori.py -f dataset.csv -s 0.33 -c 0.77
+python apriori.py -f tesco2.csv -s 0.5 -c 0.5
 ```
 
 ## Concepts of Apriori
