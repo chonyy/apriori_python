@@ -64,7 +64,7 @@ def aprioriFromFile(fname, minSup, minConf):
     rules = associationRule(globalFreqItemSet, globalItemSetWithSup, minConf)
     rules.sort(key=lambda x: x[2])
 
-    return globalFreqItemSet, rules
+    return globalFreqItemSet, globalItemSetWithSup, rules
 
 if __name__ == "__main__":
     print(f"Function: Main!")
@@ -87,6 +87,6 @@ if __name__ == "__main__":
     (options, args) = optparser.parse_args()
     print(f"Options = {options} & Arguments = {args}")
 
-    freqItemSet, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
+    freqItemSet, freqItemSetWithSup, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
 
     print(f"Frequent Item Sets => \n{freqItemSet}")
