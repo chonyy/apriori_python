@@ -89,7 +89,7 @@ if __name__ == "__main__":
                          type='float')
 
     (options, args) = optparser.parse_args()
-    print(f"Options = {options} & Arguments = {args}")
+    # print(f"Options = {options} & Arguments = {args}")
 
     freqItemSet, freqItemSetWithSup, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
 
