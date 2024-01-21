@@ -37,6 +37,8 @@ def apriori(itemSetList, minSup, minConf):
 def aprioriFromFile(fname, minSup, minConf):
     print(f"Function: aprioriFromFile!")
     C1ItemSet, itemSetList = getFromFile(fname)
+    total_items = len(itemSetList)
+    print(f"Total Transations = {total_items}")
     # print(f"itemSetList = {itemSetList}")
     # Final result global frequent itemset
     globalFreqItemSet = dict()
