@@ -27,15 +27,24 @@ def powerset(s):
 
 
 def getFromFile(fname):
-    print(f"Function: getFromFile in utils.py")
+    print(f"Function: getFromFile in utils.py [{fname}]")
     itemSets = []
     itemSet = set()
+
+    file_name_type = os.path.splitext(fname)
+    print(f"File Name & Type = {file_name_type}")
     file_dir = os.path.dirname(os.path.realpath('__file__'))
     print(f"File Directory Executing => {file_dir}")
     fname = os.path.join(file_dir, '../dataset/' + fname)
     print(f"File Name with Path => {fname}")
+
+    if file_name_type[1] == ".txt":
+        fsep = ";"
+    else:
+        fsep = ","
+    
     with open(fname, 'r') as file:
-        csv_reader = reader(file)
+        csv_reader = reader(file, delimiter=fsep)
         for line in csv_reader:
             line = list(filter(None, line))
             record = set(line)
