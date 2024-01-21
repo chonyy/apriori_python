@@ -35,10 +35,10 @@ def apriori(itemSetList, minSup, minConf):
     return globalFreqItemSet, rules
 
 def aprioriFromFile(fname, minSup, minConf):
-    print(f"Function: aprioriFromFile!")
+    # print(f"Function: aprioriFromFile!")
     C1ItemSet, itemSetList = getFromFile(fname)
     total_items = len(itemSetList)
-    print(f"Total Transations = {total_items}")
+    # print(f"Total Transations = {total_items}")
     # print(f"itemSetList = {itemSetList}")
     # Final result global frequent itemset
     globalFreqItemSet = dict()
@@ -71,7 +71,7 @@ def aprioriFromFile(fname, minSup, minConf):
     return globalFreqItemSet, globalFreqItemSetWithSup, rules
 
 if __name__ == "__main__":
-    print(f"Function: Main!")
+    # print(f"Function: Main!")
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='inputFile',
@@ -95,8 +95,9 @@ if __name__ == "__main__":
 
     if args:
         out_file_name = args[0]
-        print(f"File Name = {out_file_name}")
+        # print(f"File Name = {out_file_name}")
         with open(out_file_name, "w") as patterns_file:
             for freqItems, itemSup in freqItemSetWithSup.items():
                 formatted_text = ";".join(map(str, freqItems))
                 patterns_file.write(str(itemSup) + ':' + str(formatted_text) + '\n')
+        print(f"Output file with name {out_file_name} generated!")
