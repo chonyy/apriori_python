@@ -36,7 +36,7 @@ def apriori(itemSetList, minSup, minConf):
 
 def aprioriFromFile(fname, minSup, minConf):
     C1ItemSet, itemSetList = getFromFile(fname)
-
+    # print(f"itemSetList = {itemSetList}")
     # Final result global frequent itemset
     globalFreqItemSet = dict()
     # Storing global itemset with support count
@@ -66,6 +66,7 @@ def aprioriFromFile(fname, minSup, minConf):
     return globalFreqItemSet, rules
 
 if __name__ == "__main__":
+    print(f"Executing Main!")
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='inputFile',
@@ -83,5 +84,8 @@ if __name__ == "__main__":
                          type='float')
 
     (options, args) = optparser.parse_args()
+    print(f"Options = {options} & Arguments = {args}")
 
     freqItemSet, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
+
+    print(f"Frequent Item Sets => \n{freqItemSet}")
