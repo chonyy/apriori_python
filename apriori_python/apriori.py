@@ -2,7 +2,7 @@ from csv import reader
 from collections import defaultdict
 from itertools import chain, combinations
 from optparse import OptionParser
-from apriori_python.utils import *
+from utils import *
 
 def apriori(itemSetList, minSup, minConf):
     C1ItemSet = getItemSetFromList(itemSetList)
@@ -35,6 +35,7 @@ def apriori(itemSetList, minSup, minConf):
     return globalFreqItemSet, rules
 
 def aprioriFromFile(fname, minSup, minConf):
+    print(f"Function: aprioriFromFile!")
     C1ItemSet, itemSetList = getFromFile(fname)
     # print(f"itemSetList = {itemSetList}")
     # Final result global frequent itemset
@@ -66,7 +67,7 @@ def aprioriFromFile(fname, minSup, minConf):
     return globalFreqItemSet, rules
 
 if __name__ == "__main__":
-    print(f"Executing Main!")
+    print(f"Function: Main!")
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='inputFile',

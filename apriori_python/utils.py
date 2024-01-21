@@ -27,12 +27,12 @@ def powerset(s):
 
 
 def getFromFile(fname):
-    print(f"In function getFromFile {fname}")
+    print(f"Function: getFromFile in utils.py")
     itemSets = []
     itemSet = set()
     file_dir = os.path.dirname(os.path.realpath('__file__'))
     print(f"File Directory Executing => {file_dir}")
-    fname = os.path.join(file_dir, 'dataset/' + fname)
+    fname = os.path.join(file_dir, '../dataset/' + fname)
     print(f"File Name with Path => {fname}")
     with open(fname, 'r') as file:
         csv_reader = reader(file)
