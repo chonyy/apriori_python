@@ -71,6 +71,16 @@ def getAboveMinSup(itemSet, itemSetList, minSup, globalItemSetWithSup):
 
     return freqItemSet
 
+def getGlobalFrequent(globalItemSetWithSup, minSupport, totalItems):
+    tempItemSetWithSup = {}
+    absMinSup = minSupport * totalItems
+
+    for item, supCount in globalItemSetWithSup.items():
+        if(supCount >= absMinSup):
+            tempItemSetWithSup[item] = supCount
+
+    return tempItemSetWithSup
+
 
 def getUnion(itemSet, length):
     return set([i.union(j) for i in itemSet for j in itemSet if len(i.union(j)) == length])

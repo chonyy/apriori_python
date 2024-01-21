@@ -66,7 +66,9 @@ def aprioriFromFile(fname, minSup, minConf):
     rules = associationRule(globalFreqItemSet, globalItemSetWithSup, minConf)
     rules.sort(key=lambda x: x[2])
 
-    return globalFreqItemSet, globalItemSetWithSup, rules
+    globalFreqItemSetWithSup = getGlobalFrequent(globalItemSetWithSup, minSup, total_items)
+
+    return globalFreqItemSet, globalFreqItemSetWithSup, rules
 
 if __name__ == "__main__":
     print(f"Function: Main!")
@@ -91,4 +93,4 @@ if __name__ == "__main__":
 
     freqItemSet, freqItemSetWithSup, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
 
-    print(f"Frequent Item Sets => \n{freqItemSet}")
+    print(f"Frequent Item Sets => \n{freqItemSetWithSup}")
