@@ -93,4 +93,10 @@ if __name__ == "__main__":
 
     freqItemSet, freqItemSetWithSup, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
 
-    print(f"Frequent Item Sets => \n{freqItemSetWithSup}")
+    if args:
+        out_file_name = args[0]
+        print(f"File Name = {out_file_name}")
+        with open(out_file_name, "w") as patterns_file:
+            for freqItems, itemSup in freqItemSetWithSup.items():
+                formatted_text = ";".join(map(str, freqItems))
+                patterns_file.write(str(itemSup) + ':' + str(formatted_text) + '\n')
