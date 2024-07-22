@@ -49,7 +49,7 @@ python apriori.py -f dataset.csv
 Run program with dataset and min support and min confidence  
 
 ```
-python apriori.py -f tesco2.csv -s 0.5 -c 0.5
+python apriori.py -f ../dataset/tesco2.csv -s 0.5 -c 0.5
 ```
 
 ## Concepts of Apriori
