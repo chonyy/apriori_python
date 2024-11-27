@@ -2,7 +2,7 @@ from csv import reader
 from collections import defaultdict
 from itertools import chain, combinations
 from optparse import OptionParser
-from apriori_python.utils import *
+from utils import *
 
 def apriori(itemSetList, minSup, minConf):
     C1ItemSet = getItemSetFromList(itemSetList)
@@ -35,8 +35,11 @@ def apriori(itemSetList, minSup, minConf):
     return globalFreqItemSet, rules
 
 def aprioriFromFile(fname, minSup, minConf):
+    # print(f"Function: aprioriFromFile!")
     C1ItemSet, itemSetList = getFromFile(fname)
-
+    total_items = len(itemSetList)
+    # print(f"Total Transations = {total_items}")
+    # print(f"itemSetList = {itemSetList}")
     # Final result global frequent itemset
     globalFreqItemSet = dict()
     # Storing global itemset with support count
@@ -63,9 +66,12 @@ def aprioriFromFile(fname, minSup, minConf):
     rules = associationRule(globalFreqItemSet, globalItemSetWithSup, minConf)
     rules.sort(key=lambda x: x[2])
 
-    return globalFreqItemSet, rules
+    globalFreqItemSetWithSup = getGlobalFrequent(globalItemSetWithSup, minSup, total_items)
+
+    return globalFreqItemSet, globalFreqItemSetWithSup, rules
 
 if __name__ == "__main__":
+    # print(f"Function: Main!")
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='inputFile',
@@ -83,5 +89,15 @@ if __name__ == "__main__":
                          type='float')
 
     (options, args) = optparser.parse_args()
+    # print(f"Options = {options} & Arguments = {args}")
 
-    freqItemSet, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
+    freqItemSet, freqItemSetWithSup, rules = aprioriFromFile(options.inputFile, options.minSup, options.minConf)
+
+    if args:
+        out_file_name = args[0]
+        # print(f"File Name = {out_file_name}")
+        with open(out_file_name, "w") as patterns_file:
+            for freqItems, itemSup in freqItemSetWithSup.items():
+                formatted_text = ";".join(map(str, freqItems))
+                patterns_file.write(str(itemSup) + ':' + str(formatted_text) + '\n')
+        print(f"Output file with name {out_file_name} generated!")
